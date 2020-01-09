@@ -1,0 +1,15 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+  <h1>This is the game list</h1>
+    <div class="games">
+      {% for game in games %}
+        <div class='article'>
+          <h2><a href="{% url 'games:detail' slug=game.slug %}"><img href="">{{game.title}}</a> </h2>
+          <h3>{{game.price}} </h3>
+          <p>{{game.high_scores}} </p>
+        </div>
+      {% endfor %}
+    </div>
+{% endblock content %}
+
