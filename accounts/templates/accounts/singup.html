@@ -5,6 +5,6 @@
     <form class="site-form" action="{% url 'accounts:singup' %}" method="post">
     {% csrf_token %}
         {{form}}
-        <input type="submit">Singup</input>
+        <input type="submit" value="Singup"></input>
     </form>
 {% endblock content %}

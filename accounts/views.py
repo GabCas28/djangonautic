@@ -21,7 +21,11 @@ def login_view(request):
             #log in the user
             user= form.get_user()
             login(request, user)
-            return redirect('games:list')
+            # Conditional redirect if there is a next property on the request
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('games:list')
     else:
         form = AuthenticationForm()
 

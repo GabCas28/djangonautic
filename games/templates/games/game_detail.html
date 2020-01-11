@@ -1,13 +1,17 @@
 {% extends "base_layout.html" %}
 
 {% block content %}
-  <p>Game detail</p>
-    <div class="game">
-      <img src="{{game.thumb.url}}" />
-      <h1>{{game.title}}</h1>
-      <p>{{game.description}}</p>
-      <p>{{game.price}}</p>
-      <p>{{game.high_scores}}</p>
+  <div class="game-detail">
+    <p>Game detail</p>
+      <div class="game">
+        <img src="{{game.thumb.url}}" />
+        <h1>{{game.title}}</h1>
+        <p>{{game.description}}</p>
+        <p>{{game.price}}</p>
+        <p>{{game.high_scores}}</p>
+        <p>Uploaded on {{game.date}}</p>
+        <p class="developer"> Added by {{game.developer.username}} </p>
+      </div>
     </div>
 {% endblock content %}
 

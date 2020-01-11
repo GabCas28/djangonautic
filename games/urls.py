@@ -5,5 +5,6 @@ app_name = "games"
 
 urlpatterns = [
     path('', views.game_list, name="list"),
+    path('upload', views.upload_game, name="upload"),
     path('<slug:slug>', views.game_detail, name="detail")
 ]
