@@ -144,3 +144,7 @@ a.highlight {
     border-radius: 5px;
     padding: 5px;
 }
+
+#logo {
+    width: 200px;
+}
