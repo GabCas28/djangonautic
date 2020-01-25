@@ -19,7 +19,9 @@
 
             </form>
           </li>
-          <li><a href="{% url 'games:upload' %}" class="highlight">Upload Game</a></li>
+          {% if perms.games.add_game %}
+           <li><a href="{% url 'games:upload' %}" class="highlight">Upload Game</a></li>
+          {% endif %}
         {% else %}
           <li><a href="{% url 'accounts:login' %}">Login</a></li>
           <li><a href="{% url 'accounts:singup' %}">Singup</a></li>

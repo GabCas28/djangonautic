@@ -1,17 +1,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from . import forms
 
 def singup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST) # Gets the POST from from the request and parses it as a UserCreationForm
+        form = forms.AccountForm(request.POST) # Gets the POST from from the request and parses it as a UserCreationForm
         if form.is_valid():
             user = form.save()
             #log the user in
             login(request,user)
             return redirect('games:list')
     else:
-        form = UserCreationForm()
+        form = forms.AccountForm()
     return render(request, 'accounts/singup.html', {"form": form})
 
 def login_view(request):
